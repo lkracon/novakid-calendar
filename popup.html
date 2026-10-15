@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { font: 13px system-ui, sans-serif; width: 380px; margin: 12px; color: #222; }
+  h1 { font-size: 15px; margin: 0 0 8px; }
+  .muted { color: #777; }
+  .small { font-size: 11px; }
+  .error { color: #b00020; }
+  ul { list-style: none; padding: 0; margin: 8px 0; max-height: 280px; overflow-y: auto; border: 1px solid #ddd; border-radius: 6px; }
+  li { padding: 6px 8px; border-bottom: 1px solid #eee; display: flex; gap: 6px; align-items: flex-start; }
+  li:last-child { border-bottom: 0; }
+  li.cancelled { text-decoration: line-through; color: #999; }
+  .row { display: flex; gap: 6px; margin: 6px 0; align-items: center; }
+  select { flex: 1; min-width: 0; }
+  button { padding: 6px 10px; cursor: pointer; }
+  button.link { background: none; border: 0; padding: 0; color: #777; text-decoration: underline; font-size: 11px; }
+  #status { white-space: pre-wrap; margin-top: 8px; }
+  footer { margin-top: 10px; display: flex; justify-content: space-between; gap: 8px; }
+</style>
+</head>
+<body>
+  <h1 data-i18n="popupTitle"></h1>
+  <div id="hint" class="muted"></div>
+  <div><a href="https://school.novakidschool.com/parent/schedule" target="_blank" data-i18n="openSchedule"></a></div>
+  <div id="error" class="error small"></div>
+  <ul id="list"></ul>
+  <div class="row">
+    <button id="connect" data-i18n="connect"></button>
+    <select id="calendar" disabled><option data-i18n="connectFirst"></option></select>
+  </div>
+  <div class="row">
+    <button id="sync" data-i18n="sync" disabled></button>
+    <button id="ics" data-i18n="ics"></button>
+  </div>
+  <div id="status"></div>
+  <footer>
+    <span class="muted small" data-i18n="disclaimer"></span>
+    <button id="forget" class="link" data-i18n="forget"></button>
+  </footer>
+  <script src="popup.js"></script>
+</body>
+</html>
